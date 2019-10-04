@@ -1,4 +1,4 @@
-# Edison Bike Shop
+# Edison Electric Bike Co.
 
 #### This React-Django Application is the beginning stages of a fully functional eCommerce website for Edison Bike Shop.  Users will also be able to add, remove, and update items from the shopping cart. 
 
