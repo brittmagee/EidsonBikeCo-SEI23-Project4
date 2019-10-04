@@ -3,7 +3,7 @@ import 'bulma/css/bulma.css'
 
 import Title from './Title.js'
 import Benefits from './Benefits.js'
-import Parallax from './Parallax.js'
+import ParallaxDiv from './Parallax.js'
 import Bikes from './Bikes.js'
 import Testimonials from './Testimonials.js'
 
@@ -13,7 +13,7 @@ export default class Main extends Component {
             <div>
                 <Title />
                 <Benefits />
-                <Parallax />
+                <ParallaxDiv />
                 <Bikes />
                 <Testimonials />
             </div>

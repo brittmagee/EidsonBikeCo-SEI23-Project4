@@ -42,7 +42,7 @@ const featuredPosts = [
         display: "flex",
         flexDirection: "column",
         // flexGrow: "1",
-        border: "solid black"
+        // border: "solid black"
     },
     card: {
         display: "flex",
