@@ -34,22 +34,17 @@ const featuredPosts = [
       },
   ];
 
-  const styling = {
+const styling = {
     columns: {
         width: "100vw"
     },
     column1:{
         display: "flex",
-        flexDirection: "column",
-        // flexGrow: "1",
-        // border: "solid black"
+        flexDirection: "column"
     },
     card: {
         display: "flex",
-        height: "180px",
-        // flexGrow: "1",
-        // alignContent: "stretch"
-        // width: "50vw"
+        height: "180px"
     },
     cardDetails: {
         flex: "1",
@@ -57,7 +52,7 @@ const featuredPosts = [
     cardMedia: {
         width: "160px",
     }
-  }
+}
   
 
 export default class Testimonials extends Component {

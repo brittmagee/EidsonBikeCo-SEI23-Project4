@@ -14,7 +14,9 @@ export default class Main extends Component {
                 <Title />
                 <Benefits />
                 <ParallaxDiv />
+                    <hr class="navbar-divider" />
                 <Bikes />
+                    <hr class="navbar-divider" />
                 <Testimonials />
             </div>
         )
