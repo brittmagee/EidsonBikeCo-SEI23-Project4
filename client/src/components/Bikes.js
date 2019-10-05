@@ -40,10 +40,22 @@ const useStyles = makeStyles({
   },
   div: {
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+  
   },
   image: {
     height: 240
+  },
+  button: {
+      color: "#00D1B2",
+  },
+  click: {
+    display: "flex",
+    justifyContent: "space-between"
+  },
+  cost: {
+    display: "flex",
+    justifyContent: "space-between"
   }
 });
 
@@ -65,9 +77,14 @@ export default function ImgMediaCard() {
                     className={classes.image}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {post.title}
-                    </Typography>
+                    <div className={classes.cost}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {post.title}
+                        </Typography>
+                        <Typography gutterBottom variant="h7" component="h2">
+                            {post.cost}
+                        </Typography>
+                    </div>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {post.description}
                     </Typography>
@@ -76,11 +93,11 @@ export default function ImgMediaCard() {
                     </Typography>
                 </CardContent>
                 </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary">
+                <CardActions className={classes.click}>
+                <Button size="small" color="primary" className={classes.button}>
                     View
                 </Button>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" className={classes.button}>
                     Add to Cart
                 </Button>
                 </CardActions>

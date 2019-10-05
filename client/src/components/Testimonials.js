@@ -14,14 +14,14 @@ const featuredPosts = [
     {
       title: 'Testimonial 1',
       date: 'April 16',
-      image: "https://static.wixstatic.com/media/05d438_a183fbb169824022b03285e22e3c8547~mv2.jpg",
+      image: "https://s3-media2.fl.yelpcdn.com/bphoto/sLrHFpzrOdunXxUkPvsx3Q/ls.jpg",
       description:
         'This is a wider card with supporting text below as a natural lead-in to additional content.',
     },
     {
       title: 'Testimonial 2',
       date: 'June 3',
-      image: "https://static.wixstatic.com/media/05d438_2b17f7c8409343c9815e392d31c03a5f~mv2.jpg",
+      image: "https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11113/product/Edison_Shoot_213-0157.jpg?1518453440",
       description:
         'This is a wider card with supporting text below as a natural lead-in to additional content.',
     },
