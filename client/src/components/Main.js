@@ -7,6 +7,7 @@ import ParallaxDiv from './Parallax.js'
 import Bikes from './Bikes.js'
 import Testimonials from './Testimonials.js'
 
+
 export default class Main extends Component {
     render() {
         return (

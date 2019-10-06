@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+
+import Modal from './Modal.js'
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -64,6 +67,7 @@ export default function ImgMediaCard() {
   const classes = useStyles();
 
   return (
+
     <Grid container spacing={4} className={classes.div}>
         {featuredBikes.map(post => (
             <Grid item key={post.title} >
@@ -89,14 +93,12 @@ export default function ImgMediaCard() {
                         {post.description}
                     </Typography>
                     <Typography variant="body3" color="textSecondary" component="p">
-                        {post.sub}
+                        {/* {post.sub} */}
                     </Typography>
                 </CardContent>
                 </CardActionArea>
                 <CardActions className={classes.click}>
-                <Button size="small" color="primary" className={classes.button}>
-                    View
-                </Button>
+                    <Modal size="small"  className={classes.button}/>
                 <Button size="small" color="primary" className={classes.button}>
                     Add to Cart
                 </Button>
@@ -107,3 +109,5 @@ export default function ImgMediaCard() {
     </Grid>
   );
 }
+
+
