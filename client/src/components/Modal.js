@@ -58,7 +58,7 @@ export default function AlertDialog() {
       <Button  onClick={handleClickOpen} className={classes.button}>
         View
       </Button>
-       {/* {featuredBikes.map(post => ( */}
+       {featuredBikes.map(post => (
       <Dialog
         open={open}
         onClose={handleClose}
@@ -66,13 +66,13 @@ export default function AlertDialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Bike Title"}
-          {/* {post.title} */}
+          {/* {"Bike Title"} */}
+          {post.title}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Bike description and stats
-            {/* {post.description} */}
+            {post.description}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -84,7 +84,7 @@ export default function AlertDialog() {
           </Button>
         </DialogActions>
       </Dialog>
-      {/* ))} */}
+       ))} 
     </div>
   );
 }
