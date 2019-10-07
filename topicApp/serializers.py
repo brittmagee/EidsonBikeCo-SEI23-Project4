@@ -10,7 +10,7 @@ class TestimonialSerializer(serializers.ModelSerializer):
 class BikeSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Bike
-        fields = ['id', 'name', 'price', 'weight', 'color', 'features', 'warranty', 'goFarther', 'goFaster']
+        fields = ['id', 'name', 'price', 'weight', 'color', 'features', 'warranty', 'goFarther', 'goFaster', 'image']
 
 class CartSerializer(serializers.ModelSerializer):  
     class Meta:     

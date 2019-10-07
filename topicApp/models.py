@@ -8,7 +8,8 @@ class Testimonial(models.Model):
     occupation = models.CharField(max_length = 40)
     yearPurchased = models.IntegerField(null=True)
     quote = models.CharField(max_length=300)
-    image = models.ImageField(upload_to='testimonials', default= "https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11113/product/Edison_Shoot_213-0157.jpg?1518453440")
+    # image = models.ImageField(upload_to='testimonials', default= "https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11113/product/Edison_Shoot_213-0157.jpg?1518453440")
+    image = models.CharField(max_length = 500, default= "https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11113/product/Edison_Shoot_213-0157.jpg?1518453440")
 
 class Bike(models.Model):
     name = models.CharField(max_length = 25)
@@ -31,6 +32,7 @@ class Bike(models.Model):
     warranty = models.CharField(max_length= 100)
     goFarther = models.CharField(max_length= 100)
     goFaster = models.CharField(max_length= 100)
+    image = models.CharField(max_length = 500, default= "https://1ycbx02rgnsa1i87hd1i7v1r-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/EdisonBicycles_byGL-91-e1503524971119.jpg")
 
 # Django field data link: https://docs.djangoproject.com/en/2.2/ref/models/fields/
 
