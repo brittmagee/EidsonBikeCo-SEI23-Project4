@@ -1,4 +1,4 @@
-##### Disclaimer: The following code is written as a final project for my General Assembly Software Engineering class. This site is **not** the official website for the Edison Electric Bike Co. For access to the official website, please click the following link: [Edison Electic Bike Co.](https://www.edisonbicycles.com/) 
+##### Disclaimer: The following code is written as a final project for my General Assembly Software Engineering class. This site is **_not_** the official website for the Edison Electric Bike Co. For access to the official website, please click the following link: [Edison Electic Bike Co.](https://www.edisonbicycles.com/) 
 
 ***
 
