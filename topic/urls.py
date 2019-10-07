@@ -18,6 +18,8 @@ from django.urls import path, include, re_path
 from . import views
 
 urlpatterns = [
+    path('api/', include('topicApp.urls')),
+                         #topicApp = name of app
     path('admin/', admin.site.urls),
 
     #add this link for React

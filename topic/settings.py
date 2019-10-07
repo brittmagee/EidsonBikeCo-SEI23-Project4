@@ -135,5 +135,6 @@ REACT_APP_DIR = "client"
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static')
 ]
+
 # to anble deployment to heroku
 django_heroku.settings(locals())
