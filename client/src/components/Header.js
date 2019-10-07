@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import Cart from "./Cart.js"
+
 import 'bulma/css/bulma.css'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
@@ -69,7 +70,7 @@ export default class Header extends Component {
                             </a>
                             <a class="button is-light">
                                 Cart 
-                                <ShoppingCartIcon />
+                                <Cart/>
                             </a>
                             </div>
                         </div>
