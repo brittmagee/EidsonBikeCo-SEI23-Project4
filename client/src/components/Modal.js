@@ -72,9 +72,9 @@ export default function AlertDialog(props) {
         </DialogTitle>
         <DialogContent>
         <DialogContentText id="alert-dialog-description">
-              Color: 
+              Color:
               {/* {post.description} */}
-              { bikes.color}
+              &nbsp;{bikes.color}
             </DialogContentText>
           <DialogContentText id="alert-dialog-description">
               Weight: <br/>
