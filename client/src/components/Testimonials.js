@@ -54,28 +54,51 @@ const styling = {
     }
 }
   
+const getTestimonials = () =>
+  fetch('/api/testimonial/')
+    .then(res => res.json())
+    .catch(error => console.log(error))
 
 export default class Testimonials extends Component {
+    state = {
+        testimonialItems: [{}],
+    };
+
+    componentDidMount() {
+       this.getTestimonialFromServer()
+    }
+
+    getTestimonialFromServer() {
+        getTestimonials()
+            .then(items => {
+                console.log(items)
+                this.setState( { testimonialItems: items} )
+            })
+    }
     render() {
         return (
             <div>
                 <div class="columns" style={styling.columns}>
                     <div class="column is-two-fifths" style={styling.column1}>
                         <Grid container spacing={4} style={styling.column1}>
-                        {featuredPosts.map(post => (
-                        <Grid item key={post.title} xs={12} >
+                        {/* {featuredPosts.map(post => ( */}
+                        {/* <Grid item key={post.title} xs={12} > */}
+                        {this.state.testimonialItems.map(testimonial => (
+                        <Grid item key={testimonial.name} xs={12} >
                             <CardActionArea component="a" href="#">
                                 <Card style={styling.card}>
                                     <div style={styling.cardDetails}>
                                         <CardContent>
-                                            <Typography component="h2" variant="h5">
-                                                {post.title}
+                                            <Typography component="h2" variant="h5" >
+                                                {testimonial.name}
                                             </Typography>
                                             <Typography variant="subtitle1" color="textSecondary">
-                                                {post.date}
+                                                {testimonial.occupation}
+                                                {/* {post.date} */}
                                             </Typography>
-                                            <Typography variant="subtitle1" paragraph>
-                                                {post.description}
+                                            <Typography variant="body2" paragraph>
+                                                "{testimonial.quote}"
+                                                {/* {post.description} */}
                                             </Typography>
                                             <Typography variant="subtitle1" color="primary">
                                                 Continue reading...
@@ -85,22 +108,24 @@ export default class Testimonials extends Component {
                                     <Hidden xsDown>
                                         <CardMedia
                                             style={styling.cardMedia}
-                                            image={post.image}
-                                            title={post.title}
+                                            image={testimonial.image}
+                                            title={testimonial.name}
+                                            // image={post.image}
+                                            // title={post.title}
                                         />
                     
                                     </Hidden>
                                 </Card>
                             </CardActionArea>
                         </Grid>
-                        ))}
+                        ))} 
                     </Grid>
                 </div>
                 <div class="column ">
                     Second column
                 </div>
             </div>
-        </div>
+            </div>
         )
     }
 }

@@ -39,7 +39,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function AlertDialog() {
+export default function AlertDialog(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -58,7 +58,8 @@ export default function AlertDialog() {
       <Button  onClick={handleClickOpen} className={classes.button}>
         View
       </Button>
-       {featuredBikes.map(post => (
+       {/* {featuredBikes.map(post => ( */}
+        {props.bikes.map(bikes => (
       <Dialog
         open={open}
         onClose={handleClose}
@@ -66,19 +67,42 @@ export default function AlertDialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {/* {"Bike Title"} */}
-          {post.title}
+          {/* {post.title} */}
+          {bikes.name}
         </DialogTitle>
         <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+              Color: 
+              {/* {post.description} */}
+              { bikes.color}
+            </DialogContentText>
           <DialogContentText id="alert-dialog-description">
-            Bike description and stats
-            {post.description}
-          </DialogContentText>
+              Weight: <br/>
+              {/* {post.description} */}
+              {bikes.weight} lbs.
+            </DialogContentText>
+            <DialogContentText id="alert-dialog-description">
+              Warranty: <br/>
+              {bikes.warranty}
+            </DialogContentText>
+            <DialogContentText id="alert-dialog-description">
+              Go Farther: <br/>
+              {bikes.goFarther}
+            </DialogContentText>
+            <DialogContentText id="alert-dialog-description">
+              Go Faster: <br/>
+              {bikes.goFaster}
+            </DialogContentText>
+            <DialogContentText id="alert-dialog-description">
+              Bike Features: <br/>
+              {/* {post.description} */}
+              {bikes.features}
+            </DialogContentText>
         </DialogContent>
         <DialogActions>
-          {/* <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary">
             Add to cart
-          </Button> */}
+          </Button>
           <Button onClick={handleClose} color="primary" autoFocus>
             Close
           </Button>

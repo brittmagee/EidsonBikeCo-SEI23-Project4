@@ -37,7 +37,7 @@ const featuredBikes = [
   }
 ];
 
-const useStyles = makeStyles({
+const styling = makeStyles({
   card: {
     maxWidth: 345,
   },
@@ -63,34 +63,39 @@ const useStyles = makeStyles({
 });
 
 
-export default function ImgMediaCard() {
-  const classes = useStyles();
-
+export default function ImgMediaCard(props) {
+  const classes = styling();
   return (
 
     <Grid container spacing={4} className={classes.div}>
-        {featuredBikes.map(post => (
-            <Grid item key={post.title} >
+        {/* {featuredBikes.map(post => ( */}
+          {props.bikes.map(bikes => (
+            //  <Grid item key={post.title} > 
+            <Grid item key={bikes.name}>
             <Card className={classes.card} >
                 <CardActionArea>
                 <CardMedia
                     component="img"
                     alt="The pair"
-                    image={post.image}
+                    // image={post.image}
+                    image={bikes.image}
                     title="The Pair"
                     className={classes.image}
                 />
                 <CardContent>
                     <div className={classes.cost}>
                         <Typography gutterBottom variant="h5" component="h2">
-                            {post.title}
+                            {/* {post.title} */}
+                            {bikes.name}
                         </Typography>
                         <Typography gutterBottom variant="h7" component="h2">
-                            {post.cost}
+                            {/* {post.cost} */}
+                            ${bikes.price}
                         </Typography>
                     </div>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {post.description}
+                        {/* {post.description} */}
+                        {bikes.sub || ''}
                     </Typography>
                     <Typography variant="body3" color="textSecondary" component="p">
                         {/* {post.sub} */}
@@ -98,7 +103,7 @@ export default function ImgMediaCard() {
                 </CardContent>
                 </CardActionArea>
                 <CardActions className={classes.click}>
-                    <Modal size="small"  className={classes.button}/>
+                    <Modal bikes={props.bikes} size="small"  className={classes.button}/>
                 <Button size="small" color="primary" className={classes.button}>
                     Add to Cart
                 </Button>

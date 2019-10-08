@@ -4,9 +4,9 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'testimonial', views.TestimonialViewSet) #similar to app.use('/todoItem/), toDoRouter
-router.register(r'bike', views.BikeViewSet) #similar to app.use('/user/), userRouter
-router.register(r'cart', views.CartViewSet) #similar to app.use('/user/), userRouter
-router.register(r'order', views.OrderViewSet) #similar to app.use('/user/), userRouter
+router.register(r'bike', views.BikeViewSet) 
+# router.register(r'cart', views.CartViewSet) 
+router.register(r'order', views.OrderViewSet) 
                 # r = regular expression i.e. RegEx
                 # DO NOT put '/' before 'todoItem'. 
                     #However, when you make requests (ex. GET, POST, DELETE, PUT), you MUST put /
