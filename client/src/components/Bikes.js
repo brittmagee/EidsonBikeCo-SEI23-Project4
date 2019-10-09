@@ -65,20 +65,21 @@ const styling = makeStyles({
 
 export default function ImgMediaCard(props) {
   const classes = styling();
+
   return (
 
     <Grid container spacing={4} className={classes.div}>
         {/* {featuredBikes.map(post => ( */}
-          {props.bikes.map(bikes => (
+          {props.bikes.map(bike => (
             //  <Grid item key={post.title} > 
-            <Grid item key={bikes.name}>
+            <Grid item key={bike.name}>
             <Card className={classes.card} >
                 <CardActionArea>
                 <CardMedia
                     component="img"
                     alt="The pair"
                     // image={post.image}
-                    image={bikes.image}
+                    image={bike.image}
                     title="The Pair"
                     className={classes.image}
                 />
@@ -86,16 +87,16 @@ export default function ImgMediaCard(props) {
                     <div className={classes.cost}>
                         <Typography gutterBottom variant="h5" component="h2">
                             {/* {post.title} */}
-                            {bikes.name}
+                            {bike.name}
                         </Typography>
                         <Typography gutterBottom variant="h7" component="h2">
                             {/* {post.cost} */}
-                            ${bikes.price}
+                            ${bike.price}
                         </Typography>
                     </div>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {/* {post.description} */}
-                        {bikes.sub || ''}
+                        {bike.sub || ''}
                     </Typography>
                     <Typography variant="body3" color="textSecondary" component="p">
                         {/* {post.sub} */}
@@ -103,10 +104,10 @@ export default function ImgMediaCard(props) {
                 </CardContent>
                 </CardActionArea>
                 <CardActions className={classes.click}>
-                    <Modal bikes={props.bikes} size="small"  className={classes.button}/>
-                <Button size="small" color="primary" className={classes.button}>
+                    <Modal bike={bike} size="small"  className={classes.button}/>
+                {/* <Button onClick={bikeName()} bikes={props.bikes} size="small" color="primary" className={classes.button} >
                     Add to Cart
-                </Button>
+                </Button> */}
                 </CardActions>
             </Card>
             </Grid>

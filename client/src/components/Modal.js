@@ -36,6 +36,11 @@ const featuredBikes = [
 const useStyles = makeStyles({
   button: {
       color: "#00D1B2",
+  },
+  click: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "330px"
   }
 });
 
@@ -50,16 +55,25 @@ export default function AlertDialog(props) {
     setOpen(false);
   };
 
+  const bikeDetails = () =>{
+    props.addBikeToCart(props.bike)
+  }
+
   const classes = useStyles();
 
   return (
     <div>
       {/* {featuredBikes.map(post => ( */}
-      <Button  onClick={handleClickOpen} className={classes.button}>
-        View
-      </Button>
+      <div className={classes.click}>
+          <Button  onClick={handleClickOpen} className={classes.button}>
+            View
+          </Button>
+          {/* <Button className={classes.button}> */}
+          <Button  onClick={bikeDetails} className={classes.button}>
+            Add to Cart
+          </Button>
+      </div>
        {/* {featuredBikes.map(post => ( */}
-        {props.bikes.map(bikes => (
       <Dialog
         open={open}
         onClose={handleClose}
@@ -68,35 +82,35 @@ export default function AlertDialog(props) {
       >
         <DialogTitle id="alert-dialog-title">
           {/* {post.title} */}
-          {bikes.name}
+          {props.bike.name}
         </DialogTitle>
         <DialogContent>
         <DialogContentText id="alert-dialog-description">
               Color:
               {/* {post.description} */}
-              &nbsp;{bikes.color}
+              &nbsp;{props.bike.color}
             </DialogContentText>
           <DialogContentText id="alert-dialog-description">
               Weight: <br/>
               {/* {post.description} */}
-              {bikes.weight} lbs.
+              {props.bike.weight} lbs.
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
               Warranty: <br/>
-              {bikes.warranty}
+              {props.bike.warranty}
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
               Go Farther: <br/>
-              {bikes.goFarther}
+              {props.bike.goFarther}
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
               Go Faster: <br/>
-              {bikes.goFaster}
+              {props.bike.goFaster}
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
               Bike Features: <br/>
               {/* {post.description} */}
-              {bikes.features}
+              {props.bike.features}
             </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -108,7 +122,7 @@ export default function AlertDialog(props) {
           </Button>
         </DialogActions>
       </Dialog>
-       ))} 
+       
     </div>
   );
 }

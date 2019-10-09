@@ -12,16 +12,41 @@ const getAllBikes = () =>
         // console.log(res)
         .catch(error => console.log(error))
 
+const getOrder = () =>
+    fetch('/api/order/')
+      .then(res => res.json())
+      // console.log(res)
+      .catch(error => console.log(error))
+
+const addBikeToOrder = (bike) => {
+    console.log("Added Bike")
+
+    console.log(bike)
+    fetch('/api/order/', {
+        method: 'POST',
+        body: JSON.stringify(bike),
+        headers: {'Content-Type': 'application/json'}
+    })
+    .then(res => res.json())
+    .catch(error => console.log(error))
+      }
+
 export default class App extends Component {
   state = {
-    bikes: [{}]
+    bikes: [{}],
+    order: {
+      email: String,
+      cart: [{}]
+    }
+
 }
 
 componentDidMount() {
-  this.getBooksFromServer()
+  this.getBikesFromServer()
+  this.getOrderFromServer()
 }
 
-getBooksFromServer() {
+getBikesFromServer() {
   getAllBikes()
       .then(allBikes => {
           console.log(allBikes)
@@ -29,10 +54,18 @@ getBooksFromServer() {
       })
 }
 
+getOrderFromServer() {
+  getOrder()
+      .then(orderInfo => {
+          console.log(orderInfo)
+          this.setState( { order: orderInfo } )
+      })
+}
+
   render() {
     return (
       <div>
-        <Header bikes={this.state.bikes}/>
+        <Header bikes={this.state.bikes} order={this.state.order}/>
         <Main bikes={this.state.bikes}/>
         <Footer />
       </div>
