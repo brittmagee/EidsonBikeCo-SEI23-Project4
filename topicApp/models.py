@@ -6,7 +6,7 @@ from django.db import models
 class Testimonial(models.Model):
     name = models.CharField(max_length = 40)
     occupation = models.CharField(max_length = 40)
-    yearPurchased = models.IntegerField(null=True)
+    yearPurchased = models.IntegerField(default=2019, null=True)
     quote = models.CharField(max_length=300)
     # image = models.ImageField(upload_to='testimonials', default= "https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11113/product/Edison_Shoot_213-0157.jpg?1518453440")
     image = models.CharField(max_length = 500, default= "https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11113/product/Edison_Shoot_213-0157.jpg?1518453440")
@@ -16,7 +16,7 @@ class Testimonial(models.Model):
 class Bike(models.Model):
     name = models.CharField(max_length = 25)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    weight = models.IntegerField(null=True)
+    weight = models.IntegerField(default=46 , null=True)
     sub = models.CharField(max_length= 100, default="Born in ATL")
     thePair = 'Black + White'
     theBlack = 'Black'
