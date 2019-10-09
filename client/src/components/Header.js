@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 export default class Header extends Component {
     render() {
+        console.log('this.props', this.props)
         return (
             <div>
                 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -70,7 +71,7 @@ export default class Header extends Component {
                             </a>
                             <a class="button is-light">
                                 Cart 
-                                <Cart/>
+                                <Cart cart={this.props.cart}/>
                             </a>
                             </div>
                         </div>

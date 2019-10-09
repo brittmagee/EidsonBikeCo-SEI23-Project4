@@ -56,7 +56,9 @@ export default function AlertDialog(props) {
   };
 
   const bikeDetails = () =>{
-    props.addBikeToCart(props.bike)
+    console.log(props.bike)
+    props.cart.push(props.bike)
+    // props.addBikeToCart(props.bike)
   }
 
   const classes = useStyles();

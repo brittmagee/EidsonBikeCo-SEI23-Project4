@@ -16,7 +16,7 @@ export default class Main extends Component {
                 <Benefits />
                 <ParallaxDiv />
                     <hr class="navbar-divider" />
-                <Bikes bikes={this.props.bikes}/>
+                <Bikes bikes={this.props.bikes} cart={this.props.cart}/>
                     <hr class="navbar-divider" />
                 <Testimonials />
             </div>

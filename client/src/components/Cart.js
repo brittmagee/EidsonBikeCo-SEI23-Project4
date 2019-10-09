@@ -45,7 +45,7 @@ const useStyles = makeStyles({
 
 
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
@@ -101,6 +101,9 @@ export default function TemporaryDrawer() {
         </Badge>
       </IconButton>
       <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+        { props.cart !== undefined ? props.cart.map((cartItem, i) => (
+            <div>cart item {cartItem.name}</div>
+          )): null}
         {sideList('right') }
       </Drawer>
     </div>

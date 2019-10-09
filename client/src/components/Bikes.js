@@ -104,7 +104,7 @@ export default function ImgMediaCard(props) {
                 </CardContent>
                 </CardActionArea>
                 <CardActions className={classes.click}>
-                    <Modal bike={bike} size="small"  className={classes.button}/>
+                    <Modal bike={bike} size="small"  className={classes.button} cart={props.cart}/>
                 {/* <Button onClick={bikeName()} bikes={props.bikes} size="small" color="primary" className={classes.button} >
                     Add to Cart
                 </Button> */}
