@@ -71,7 +71,7 @@ export default class Testimonials extends Component {
     getTestimonialFromServer() {
         getTestimonials()
             .then(items => {
-                console.log(items)
+                // console.log(items)
                 this.setState( { testimonialItems: items} )
             })
     }

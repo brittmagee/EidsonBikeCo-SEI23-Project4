@@ -1,7 +1,14 @@
 import React from 'react';
-import CartItem from './CartItem.js'
 
 import 'bulma/css/bulma.css'
+import Email from './Email.js'
+
+
+import DeleteIcon from '@material-ui/icons/Delete';
+
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -40,8 +47,31 @@ const useStyles = makeStyles({
   },
   margin: {
     margin: "10px 0"
+  },
+  delete: {
+    margin: "0 0 0 50px", //places delete button on right upper hand corner
+  },
+  price: {
+      margin: "0 0 0 150px",
+      color: "#00D1B2",
+  },
+  text:{
+      textAlign: "left"
+  },
+  padding:{
+      paddingRight: "300px"
+  },
+  image:{
+      paddingLeft: "5px",
+      marginBottom: "10px"
+  },
+  email: {
+    marginTop: "40px",
+    textAlign: "center",
+    fontSize: "13pt"
   }
 });
+
 
 
 
@@ -55,16 +85,26 @@ export default function TemporaryDrawer(props) {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [side]: open });
   };
+
+  const removeBike = (cartItem, i) =>{
+    console.log(cartItem)
+    props.cart.splice(i,1)
+    console.log(props.cart)
+  }
+
+  // const removeBike = () =>{
+  //   props.cart.pop()
+  //   console.log(props.cart)
+  // }
 
   const sideList = side => (
     <div
       className={classes.list}
       role="presentation"
       // onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
+      // onKeyDown={toggleDrawer(side, false)}
     >
       <div className={classes.body}>
         <Typography variant="h5" component="h2">Edison Electric Bike Co.</Typography>
@@ -72,7 +112,62 @@ export default function TemporaryDrawer(props) {
       </div>
       <Divider />
       <div className={classes.item}>  
-        <CartItem/>
+        { props.cart !== undefined ? props.cart.map((cartItem, i) => (
+            <div>
+            <Paper >
+            <IconButton aria-label="delete" >
+                {/* <DeleteIcon fontSize="small" onClick={(cartItem, i) => props.cart.splice(cartItem, i)} /> */}
+                <DeleteIcon fontSize="small" onClick={(i) => removeBike(cartItem, i)} />
+                {/* <DeleteIcon fontSize="small" onClick={(x) => removeBike(x)} /> */}
+            </IconButton>
+                <Grid container spacing={2}>
+                    <Grid item>
+                        <ButtonBase className={classes.image} padding="10px">
+                            <img className={classes.image} src={cartItem.image} width="100" />
+                        </ButtonBase>
+                    </Grid>
+                    <Grid item xs={12} sm container>
+                        <Grid item xs container direction="column" spacing={2}>
+                            <Grid item xs>
+                                <Typography component="h2" variant="h5" gutterBottom className={classes.text}>
+                                    {cartItem.name}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary" gutterBottom className={classes.text}>
+                                    Color: {cartItem.color}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary" gutterBottom className={classes.text}>
+                                    Quantity: 
+                                    {/* Quantity: {item.quantity} */}
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography variant="subtitle1" color="primary" className={classes.price}>$ {cartItem.price}</Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Paper>
+        </div>
+
+          )): null}
+        
+        <Email email={props.email} updateEmail={props.updateEmail}/>
+{/*         
+        <h3 class="subtitle is-5 has-text-centered" className={classes.email} >Please enter your email to complete order:</h3>
+          <div class="control has-icons-left has-icons-right">
+              <input 
+                class="input is-info" 
+                type="email" 
+                placeholder="Email..."
+                value = {this.state.yearPublished} 
+                />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right" >
+              <i class="fas fa-check"></i>
+            </span>
+          </div> */}
       </div>
       <Divider />
       <List className={classes.pay}>
@@ -84,7 +179,9 @@ export default function TemporaryDrawer(props) {
           <PaymentIcon className={classes.extendedIcon} />
            PayPal Checkout
         </Fab>
-        <Fab variant="extended" color="tertiary" aria-label="add" className={classes.margin}>
+        <Fab variant="extended" color="tertiary" aria-label="add" className={classes.margin} 
+            onClick={props.addBikeToOrder}
+            >
           <ReceiptIcon className={classes.extendedIcon} />
           Checkout
         </Fab>
@@ -101,9 +198,6 @@ export default function TemporaryDrawer(props) {
         </Badge>
       </IconButton>
       <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-        { props.cart !== undefined ? props.cart.map((cartItem, i) => (
-            <div>cart item {cartItem.name}</div>
-          )): null}
         {sideList('right') }
       </Drawer>
     </div>
