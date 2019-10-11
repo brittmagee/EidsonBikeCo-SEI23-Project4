@@ -18,23 +18,6 @@ const getOrder = () =>
     // console.log(res)
     .catch(error => console.log(error));
 
-// const removeBike = (cartItem, i) =>{
-//   console.log(cartItem)
-//   props.cart.splice(cartItem, i)
-// }
-
-// const addBikeToOrder = (bike) => {
-//   console.log("Added Bike");
-
-//   console.log(bike);
-//   fetch("/api/order/", {
-//     method: "POST",
-//     body: JSON.stringify(bike),
-//     headers: { "Content-Type": "application/json" }
-//   })
-//     .then(res => res.json())
-//     .catch(error => console.log(error));
-// };
 
 export default class App extends Component {
   state = {

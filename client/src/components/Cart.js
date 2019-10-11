@@ -94,9 +94,6 @@ export default function TemporaryDrawer(props) {
     console.log(props.cart)
   }
 
-
-
-
   const sideList = side => (
     <div
       className={classes.list}
@@ -114,7 +111,7 @@ export default function TemporaryDrawer(props) {
             <div>
             <Paper >
             <IconButton aria-label="delete" >
-                <DeleteIcon fontSize="small" onClick={(i) => removeBike(cartItem, i)} />
+                <DeleteIcon fontSize="small" onClick={() => removeBike(cartItem, i)} />
             </IconButton>
                 <Grid container spacing={2}>
                     <Grid item>
