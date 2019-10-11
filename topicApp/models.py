@@ -39,15 +39,16 @@ class Bike(models.Model):
 
 # Django field data link: https://docs.djangoproject.com/en/2.2/ref/models/fields/
 
-# class Cart(models.Model):
-#     isComplete = models.BooleanField() 
+# class Order(models.Model):
+#     isComplete = models.BooleanField(default=False) 
+#     email = models.EmailField(default="Email...",max_length = 50)
 
-# association table between the bikes and carts 
+
 class Order(models.Model):
-    # cart = models.ForeignKey(Cart, default=1, on_delete=models.PROTECT, related_name='carts')
+    # order= models.ForeignKey(Order, default=1, on_delete=models.PROTECT, related_name='carts')
+    # bike = models.ForeignKey(Bike, default=1, on_delete=models.PROTECT, related_name='bikes')
     email = models.EmailField(default="Email...",max_length = 50)
     bike = models.ForeignKey(Bike, default=1, on_delete=models.PROTECT, related_name='bikes')
-    # quantity = models.IntegerField(null=True)
 
 
 

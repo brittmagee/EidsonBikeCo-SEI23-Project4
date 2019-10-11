@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     width: 'auto',
   },
   item: {
-    padding: '30px'
+    padding: '30px',
   },
   pay: {
     display: 'flex',
@@ -68,7 +68,7 @@ const useStyles = makeStyles({
   email: {
     marginTop: "40px",
     textAlign: "center",
-    fontSize: "13pt"
+    fontSize: "13pt",
   }
 });
 
@@ -94,10 +94,8 @@ export default function TemporaryDrawer(props) {
     console.log(props.cart)
   }
 
-  // const removeBike = () =>{
-  //   props.cart.pop()
-  //   console.log(props.cart)
-  // }
+
+
 
   const sideList = side => (
     <div
@@ -116,9 +114,7 @@ export default function TemporaryDrawer(props) {
             <div>
             <Paper >
             <IconButton aria-label="delete" >
-                {/* <DeleteIcon fontSize="small" onClick={(cartItem, i) => props.cart.splice(cartItem, i)} /> */}
                 <DeleteIcon fontSize="small" onClick={(i) => removeBike(cartItem, i)} />
-                {/* <DeleteIcon fontSize="small" onClick={(x) => removeBike(x)} /> */}
             </IconButton>
                 <Grid container spacing={2}>
                     <Grid item>
@@ -148,26 +144,10 @@ export default function TemporaryDrawer(props) {
                 </Grid>
             </Paper>
         </div>
-
           )): null}
         
         <Email email={props.email} updateEmail={props.updateEmail}/>
-{/*         
-        <h3 class="subtitle is-5 has-text-centered" className={classes.email} >Please enter your email to complete order:</h3>
-          <div class="control has-icons-left has-icons-right">
-              <input 
-                class="input is-info" 
-                type="email" 
-                placeholder="Email..."
-                value = {this.state.yearPublished} 
-                />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right" >
-              <i class="fas fa-check"></i>
-            </span>
-          </div> */}
+
       </div>
       <Divider />
       <List className={classes.pay}>

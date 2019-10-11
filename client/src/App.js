@@ -41,9 +41,9 @@ export default class App extends Component {
     bikes: [{}],
     order: {
       email: "",
-      cart: []
+      cart: [],
+      // id:"4"
     },
-    // cartItem : [{}]
   };
 
   componentDidMount() {
@@ -76,6 +76,23 @@ export default class App extends Component {
     this.setState({order: newOrder});
   }
 
+  // addBikeToOrder = (evnt) => {
+  //   console.log("Added Bike");
+  //   // evnt.preventDefault();
+
+  //   //let newOrder ={...this.state.order}
+  //   this.state.order.cart.forEach(bike => {
+  //     fetch("/api/orderitem/", {
+  //       method: "POST",
+  //       body: JSON.stringify({bike: bike.id, order: this.state.order.id}),
+  //       headers: { "Content-Type": "application/json" }
+  //     })
+  //     .then(res => res.json())
+  //     .catch(error => console.log(error));
+  //     // console.log(newOrder);
+  //   })
+  // };
+
   addBikeToOrder = (evnt) => {
     console.log("Added Bike");
     // evnt.preventDefault();
@@ -90,7 +107,6 @@ export default class App extends Component {
       .then(res => res.json())
       .catch(error => console.log(error));
   };
-
 
 
   render() {

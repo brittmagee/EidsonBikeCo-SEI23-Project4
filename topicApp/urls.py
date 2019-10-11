@@ -5,7 +5,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r'testimonial', views.TestimonialViewSet) #similar to app.use('/todoItem/), toDoRouter
 router.register(r'bike', views.BikeViewSet) 
-# router.register(r'cart', views.CartViewSet) 
+# router.register(r'orderitem', views.OrderItemViewSet) 
 router.register(r'order', views.OrderViewSet) 
                 # r = regular expression i.e. RegEx
                 # DO NOT put '/' before 'todoItem'. 

@@ -1,6 +1,6 @@
 from rest_framework import serializers    
 # from .models import Testimonial, Bike, Cart, Order 
-from .models import Testimonial, Bike, Order 
+from .models import Testimonial, Bike, Order
 
 class TestimonialSerializer(serializers.ModelSerializer):  
     class Meta:     
@@ -13,12 +13,13 @@ class BikeSerializer(serializers.ModelSerializer):
         model = Bike
         fields = ['id', 'name', 'price', 'weight', 'sub', 'color','features', 'warranty', 'goFarther', 'goFaster', 'image']
 
-# class CartSerializer(serializers.ModelSerializer):  
+# class OrderItemSerializer(serializers.ModelSerializer):  
 #     class Meta:     
-#         model = Cart
-#         fields = ['id', 'isComplete']
+#         model = OrderItem
+#         fields = ['id','order', 'bike']
 
 class OrderSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Order
         fields = ['email', 'bike']
+        # fields = ['id','email', 'isComplete']

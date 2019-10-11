@@ -21,8 +21,6 @@ export default class Email extends Component {
     handleChange = async (evnt) => {
         // evnt.preventDefault();
         // this.props.updateEmail(evnt.target.value)
-   
-
         let newEmail = {}
         newEmail[evnt.target.name] = evnt.target.value;
         console.log(this.props)

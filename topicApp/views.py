@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import viewsets    
 # from .serializers import TestimonialSerializer, BikeSerializer, CartSerializer, OrderSerializer   
 # from .models import Testimonial, Bike, Cart, Order  
-from .serializers import TestimonialSerializer, BikeSerializer, OrderSerializer   
-from .models import Testimonial, Bike, Order  
+from .serializers import TestimonialSerializer, BikeSerializer, OrderSerializer 
+from .models import Testimonial, Bike, Order
 
 
 # add these imports for React
@@ -27,12 +27,6 @@ class BikeViewSet(viewsets.ModelViewSet):
     queryset = Bike.objects.all()    
     serializer_class = BikeSerializer 
 
-# class CartViewSet(viewsets.ModelViewSet): 
-#     """    
-#     API endpoint that allows users to be viewed or edited.    
-#     """    
-#     queryset = Cart.objects.all()    
-#     serializer_class = CartSerializer 
 
 class OrderViewSet(viewsets.ModelViewSet): 
     """    
@@ -40,3 +34,10 @@ class OrderViewSet(viewsets.ModelViewSet):
     """    
     queryset = Order.objects.all()    
     serializer_class = OrderSerializer 
+
+# class OrderItemViewSet(viewsets.ModelViewSet): 
+#     """    
+#     API endpoint that allows users to be viewed or edited.    
+#     """    
+#     queryset = OrderItem.objects.all()    
+#     serializer_class = OrderItemSerializer 
