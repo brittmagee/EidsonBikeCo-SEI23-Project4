@@ -76,6 +76,12 @@ const useStyles = makeStyles({
 
 
 export default function TemporaryDrawer(props) {
+
+
+  const displayCartNumber = () => {
+    return props.order.cart ? props.order.cart.length : 0
+  }
+
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
@@ -88,11 +94,11 @@ export default function TemporaryDrawer(props) {
     setState({ ...state, [side]: open });
   };
 
-  const removeBike = (cartItem, i) =>{
-    console.log(cartItem)
-    props.cart.splice(i,1)
-    console.log(props.cart)
-  }
+  // const removeBike = (cartItem, i) =>{
+  //   console.log(cartItem)
+  //   props.cart.splice(i,1)
+  //   console.log(props.cart)
+  // }
 
   const sideList = side => (
     <div
@@ -111,7 +117,8 @@ export default function TemporaryDrawer(props) {
             <div>
             <Paper >
             <IconButton aria-label="delete" >
-                <DeleteIcon fontSize="small" onClick={() => removeBike(cartItem, i)} />
+                <DeleteIcon fontSize="small" onClick={() => props.removeBikeFromCart(cartItem, i)} />
+                {/* <DeleteIcon fontSize="small" onClick={() => removeBike(cartItem, i)} /> */}
             </IconButton>
                 <Grid container spacing={2}>
                     <Grid item>
@@ -167,10 +174,11 @@ export default function TemporaryDrawer(props) {
   );
 
 
+  console.log(props.cartItems)
   return (
     <div>
       <IconButton color="inherit" onClick={toggleDrawer('right', true)}>
-        <Badge badgeContent={1} color="primary">
+        <Badge badgeContent={`${props.cartItems}`} color="primary">
           <ShoppingCartIcon/>
         </Badge>
       </IconButton>

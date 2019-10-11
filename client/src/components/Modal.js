@@ -55,11 +55,11 @@ export default function AlertDialog(props) {
     setOpen(false);
   };
 
-  const bikeDetails = () =>{
-    console.log(props.bike)
-    props.cart.push(props.bike)
-    // props.addBikeToCart(props.bike)
-  }
+  // const addBikeToCart = () =>{
+  //   console.log(props.bike)
+  //   props.cart.push(props.bike)
+  //   // props.addBikeToCart(props.bike)
+  // }
 
   const classes = useStyles();
 
@@ -71,7 +71,7 @@ export default function AlertDialog(props) {
             View
           </Button>
           {/* <Button className={classes.button}> */}
-          <Button  onClick={bikeDetails} className={classes.button}>
+          <Button  onClick={()=>{props.addBikeToCart(props.bike)}} className={classes.button}>
             Add to Cart
           </Button>
       </div>

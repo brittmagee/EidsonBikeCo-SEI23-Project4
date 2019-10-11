@@ -21,6 +21,7 @@ const getOrder = () =>
 
 export default class App extends Component {
   state = {
+    cartItems: 0,
     bikes: [{}],
     order: {
       email: "",
@@ -91,6 +92,27 @@ export default class App extends Component {
       .catch(error => console.log(error));
   };
 
+  addBikeToCart = (newBike) => {
+    let updatedOrder ={...this.state.order}
+    updatedOrder.cart = [...this.state.order.cart, newBike]
+    console.log(updatedOrder)
+    let cartItems = this.state.cartItems+ 1
+    this.setState({order: updatedOrder, cartItems})
+
+
+    // props.cart.pushf(props.bike)
+    // props.addBikeToCart(props.bike)
+  }
+
+  removeBikeFromCart = (cartItem, i) =>{
+    console.log(cartItem)
+    let newOrder ={...this.state.order}
+    let cartItems = this.state.cartItems - 1
+    
+    newOrder.cart.splice(i,1)
+    this.setState({order: newOrder, cartItems})
+    console.log(newOrder)
+  }
 
   render() {
     console.log(this.state);
@@ -98,13 +120,19 @@ export default class App extends Component {
       <div>
         <Header 
           bikes={this.state.bikes} 
+          cartItems = {this.state.cartItems}
           cart={this.state.order.cart} 
           email={this.state.order.email}
           addBikeToOrder={this.addBikeToOrder}
           updateEmail={this.updateEmail}
+          removeBikeFromCart={this.removeBikeFromCart}
+
           // cartItem={this.state.cartItem}
         />
-        <Main bikes={this.state.bikes} cart={this.state.order.cart}  />
+        <Main 
+            bikes={this.state.bikes} 
+            cart={this.state.order.cart}
+            addBikeToCart={this.addBikeToCart}  />
         <Footer />
       </div>
     );

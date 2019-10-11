@@ -77,6 +77,9 @@ export default class Header extends Component {
                                     bikes={this.props.bikes}
                                     addBikeToOrder={this.props.addBikeToOrder}
                                     updateEmail={this.props.updateEmail}
+                                    cartItems = {this.props.cartItems}
+
+                                    removeBikeFromCart={this.props.removeBikeFromCart}
                                     />
                                 {/* <Cart cart={this.props.cart} cartItem={this.props.cartItem}/> */}
                             </a>
