@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 
-
+import MapImage from "./Map.js"
 import 'bulma/css/bulma.css'
 
 const styling = {
     background:{
         backgroundColor: "hsl(0, 0%, 21%)",
         color: "white",
-        height: "380px",
+        height: "400px",
         marginTop: "10px",
-        padding: "20px 10px"
+        padding: "20px 10px",
+
     },
     map: {
-        height: "250px"
+        height: "25%"
     },
     text:{
         color: "#00D1B2",
@@ -39,6 +40,9 @@ const styling = {
         ':hover': {
             color: "#00D1B2"
         }
+    },
+    column: {
+        padding: '0px'
     }
 }
 
@@ -49,14 +53,16 @@ export default class Footer extends Component {
         return (
             <div>
                 <footer class="footer" style={styling.background}>
-                <div class="columns">
-                    <div class="column is-two-fifths">
+                <div class="columns" style={styling.column}>
+                    <div class="column is-two-fifths" style={styling.column}>
                         <div class="content has-text-centered" >
                             <a href="https://www.edisonbicycles.com/contact" target="_blank">
                                 <h3 style={styling.text}><strong>Come Ride One!</strong></h3>
                             </a>
                             <p>(By Appointment Only)</p>
-                            <div class="box" style={styling.map}></div>
+                            <div>
+                                <MapImage />
+                            </div>
                         </div>
                     </div>
                     <div class="column has-text-centered" >

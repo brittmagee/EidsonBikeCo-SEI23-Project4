@@ -24,3 +24,7 @@
 .footerLink:hover {
   color: #00D1B2
 }
+
+.mapBox > div {
+  height: 500px
+}
