@@ -3,6 +3,7 @@ import Cart from "./Cart.js"
 
 import 'bulma/css/bulma.css'
 
+//header nav bar design from Bulma
 document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
     const minNav = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -36,9 +37,8 @@ export default class Header extends Component {
                     <div class="navbar-brand">
                         <a class="navbar-item" href="/">
                             <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp"/>
-                            {/* <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp" width="162" height="78" /> */}
                         </a>
-                        {/* Activates for mobile viewing */}
+                        {/* Activates for mobile/small screen viewing */}
                         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
@@ -75,13 +75,11 @@ export default class Header extends Component {
                                     cart={this.props.cart} 
                                     email={this.props.email}
                                     bikes={this.props.bikes}
+                                    cartItems = {this.props.cartItems}
                                     addBikeToOrder={this.props.addBikeToOrder}
                                     updateEmail={this.props.updateEmail}
-                                    cartItems = {this.props.cartItems}
-
                                     removeBikeFromCart={this.props.removeBikeFromCart}
                                     />
-                                {/* <Cart cart={this.props.cart} cartItem={this.props.cartItem}/> */}
                             </a>
                             </div>
                         </div>

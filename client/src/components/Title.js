@@ -5,21 +5,16 @@ const styling = {
     image: {
         backgroundImage: "url(https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11110/product/Edison_Shoot_213-0095.jpg?1518453189)",
         backgroundSize: "100vw",
-        // height: "400px",
         display: "block",
         maxWidth: "100%",
         height: "auto",
-        // backgroundColor:"rgba(0, 0, 0, .8)",
         opacity: "0.8",
     },
     text: {
         width: "400px",
         color: "white"
     },
-    // container: {
-    //     backgroundColor: "white",
-    //     width: "410px"
-    // }
+
 }
 
 export default class Title extends Component {

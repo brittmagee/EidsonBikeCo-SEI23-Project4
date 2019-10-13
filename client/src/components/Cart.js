@@ -3,13 +3,10 @@ import React from 'react';
 import 'bulma/css/bulma.css'
 import Email from './Email.js'
 
-
 import DeleteIcon from '@material-ui/icons/Delete';
-
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import ButtonBase from '@material-ui/core/ButtonBase';
-
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -22,7 +19,6 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import Fab from '@material-ui/core/Fab';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ReceiptIcon from '@material-ui/icons/Receipt';
-
 
 const useStyles = makeStyles({
   body: {
@@ -72,17 +68,9 @@ const useStyles = makeStyles({
   }
 });
 
-
-
-
 export default function TemporaryDrawer(props) {
 
-
-  const displayCartNumber = () => {
-    return props.order.cart ? props.order.cart.length : 0
-  }
-
-  const classes = useStyles();
+  const styling = useStyles();
   const [state, setState] = React.useState({
     right: false,
   });
@@ -94,54 +82,46 @@ export default function TemporaryDrawer(props) {
     setState({ ...state, [side]: open });
   };
 
-  // const removeBike = (cartItem, i) =>{
-  //   console.log(cartItem)
-  //   props.cart.splice(i,1)
-  //   console.log(props.cart)
-  // }
-
   const sideList = side => (
     <div
-      className={classes.list}
+      className={styling.list}
       role="presentation"
-      // onClick={toggleDrawer(side, false)}
-      // onKeyDown={toggleDrawer(side, false)}
     >
-      <div className={classes.body}>
+      <div className={styling.body}>
         <Typography variant="h5" component="h2">Edison Electric Bike Co.</Typography>
         <Typography variant="body1" color="textSecondary" lineHeight={10}>Order Summary</Typography>
       </div>
       <Divider />
-      <div className={classes.item}>  
+      <div className={styling.item}>  
         { props.cart !== undefined ? props.cart.map((cartItem, i) => (
             <div>
             <Paper >
             <IconButton aria-label="delete" >
                 <DeleteIcon fontSize="small" onClick={() => props.removeBikeFromCart(cartItem, i)} />
-                {/* <DeleteIcon fontSize="small" onClick={() => removeBike(cartItem, i)} /> */}
             </IconButton>
                 <Grid container spacing={2}>
                     <Grid item>
-                        <ButtonBase className={classes.image} padding="10px">
-                            <img className={classes.image} src={cartItem.image} width="100" />
+                        <ButtonBase className={styling.image} padding="10px">
+                            <img className={styling.image} src={cartItem.image} width="100" />
                         </ButtonBase>
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
-                                <Typography component="h2" variant="h5" gutterBottom className={classes.text}>
+                                <Typography component="h2" variant="h5" gutterBottom className={styling.text}>
                                     {cartItem.name}
                                 </Typography>
-                                <Typography variant="subtitle1" color="textSecondary" gutterBottom className={classes.text}>
+                                <Typography variant="subtitle1" color="textSecondary" gutterBottom className={styling.text}>
                                     Color: {cartItem.color}
                                 </Typography>
-                                <Typography variant="subtitle1" color="textSecondary" gutterBottom className={classes.text}>
-                                    Quantity: 
-                                    {/* Quantity: {item.quantity} */}
+                                <Typography variant="subtitle1" color="textSecondary" gutterBottom className={styling.text}>
+                                    Quantity: 1
                                 </Typography>
                             </Grid>
                             <Grid item>
-                                <Typography variant="subtitle1" color="primary" className={classes.price}>$ {cartItem.price}</Typography>
+                                <Typography variant="subtitle1" color="primary" className={styling.price}>
+                                  $ {cartItem.price}
+                                </Typography>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -154,19 +134,19 @@ export default function TemporaryDrawer(props) {
 
       </div>
       <Divider />
-      <List className={classes.pay}>
-        <Fab variant="extended" color="primary" aria-label="add" className={classes.margin}>
-          <ArrowBackIosIcon className={classes.extendedIcon} />
+      <List className={styling.pay}>
+        <Fab variant="extended" color="primary" aria-label="add" className={styling.margin}>
+          <ArrowBackIosIcon className={styling.extendedIcon} />
            Back to Browse
         </Fab>
-        <Fab variant="extended" color="primary" aria-label="add" className={classes.margin}>
-          <PaymentIcon className={classes.extendedIcon} />
+        <Fab variant="extended" color="primary" aria-label="add" className={styling.margin}>
+          <PaymentIcon className={styling.extendedIcon} />
            PayPal Checkout
         </Fab>
-        <Fab variant="extended" color="tertiary" aria-label="add" className={classes.margin} 
+        <Fab variant="extended" color="tertiary" aria-label="add" className={styling.margin} 
             onClick={props.addBikeToOrder}
             >
-          <ReceiptIcon className={classes.extendedIcon} />
+          <ReceiptIcon className={styling.extendedIcon} />
           Checkout
         </Fab>
       </List>
