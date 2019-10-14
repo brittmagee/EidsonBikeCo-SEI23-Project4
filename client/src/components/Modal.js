@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bulma/css/bulma.css'
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -6,6 +7,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -41,6 +43,14 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "space-between",
     width: "330px"
+  },
+  image: {
+    height: 210,
+    marginBottom: '10px',
+    borderRadius: '30px',
+  },
+  title: {
+    color: "#00D1B2",
   }
 });
 
@@ -82,44 +92,57 @@ export default function AlertDialog(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle id="alert-dialog-title" className={classes.title}>
           {/* {post.title} */}
           {props.bike.name}
         </DialogTitle>
         <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-              Color:
-              {/* {post.description} */}
-              &nbsp;{props.bike.color}
-            </DialogContentText>
-          <DialogContentText id="alert-dialog-description">
-              Weight: <br/>
-              {/* {post.description} */}
-              {props.bike.weight} lbs.
+        <div class="columns">
+          <div class="column is-two-fifths">
+            <DialogContentText id="alert-dialog-description">
+                Color:
+                {/* {post.description} */}
+                &nbsp;{props.bike.color}
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
-              Warranty: <br/>
-              {props.bike.warranty}
+                Weight: <br/>
+                {/* {post.description} */}
+                {props.bike.weight} lbs.
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
-              Go Farther: <br/>
-              {props.bike.goFarther}
+                Warranty: <br/>
+                {props.bike.warranty}
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
-              Go Faster: <br/>
-              {props.bike.goFaster}
+                Go Farther: <br/>
+                {props.bike.goFarther}
             </DialogContentText>
             <DialogContentText id="alert-dialog-description">
-              Bike Features: <br/>
-              {/* {post.description} */}
-              {props.bike.features}
+                Go Faster: <br/>
+                {props.bike.goFaster}
             </DialogContentText>
+          </div>
+          <div class='column'>
+            <CardMedia
+              component="img"
+              alt="Bike Display"
+              image={props.bike.image}
+              title="The Pair"
+              className={classes.image}
+            />
+            <DialogContentText id="alert-dialog-description">
+                Bike Features: <br/>
+                {/* {post.description} */}
+                {props.bike.features}
+            </DialogContentText>
+          </div>
+        </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={()=>{props.addBikeToCart(props.bike)}} color="primary">
+          <Button onClick={()=>{props.addBikeToCart(props.bike)}} color="primary" className={classes.button}>
             Add to cart
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleClose} color="primary" autoFocus className={classes.button}>
             Close
           </Button>
         </DialogActions>

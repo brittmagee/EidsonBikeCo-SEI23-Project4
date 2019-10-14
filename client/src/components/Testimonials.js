@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import 'bulma/css/bulma.css'
 import Instagram from './Instagram.js';
 
-
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';

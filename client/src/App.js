@@ -3,7 +3,6 @@ import Footer from "./components/Footer.js";
 import Header from "./components/Header.js";
 import Main from "./components/Main.js";
 
-
 import "bulma/css/bulma.css";
 
 // AJAX request to get all bikes from database

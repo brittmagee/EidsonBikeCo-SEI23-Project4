@@ -76,7 +76,7 @@ export default function ImgMediaCard(props) {
                 <CardActionArea>
                 <CardMedia
                     component="img"
-                    alt="The pair"
+                    alt="Bike Display"
                     // image={post.image}
                     image={bike.image}
                     title="The Pair"
