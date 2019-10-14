@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import 'bulma/css/bulma.css'
+import Instagram from './Instagram.js';
+
 
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -8,6 +10,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 
 const featuredPosts = [
@@ -51,6 +56,18 @@ const styling = {
     },
     cardMedia: {
         width: "160px",
+    },
+    socials: {
+        textAlign: 'center'
+    },
+    feed:{
+        color: "#00D1B2",
+    },
+    icons:{
+        color: "#00D1B2",
+        width: 40,
+        height: 40,
+        margin: '0 10px'
     }
 }
   
@@ -122,7 +139,16 @@ export default class Testimonials extends Component {
                     </Grid>
                 </div>
                 <div class="column ">
-                    Second column
+                    <div style={styling.socials}>
+                        <Typography component="h2" variant="h4" style={styling.feed}>Socials</Typography>
+                        <Typography variant="h6" color="textSecondary">The Journey Is Just As Important As The Destination. Follow Ours.</Typography>
+                        <div>
+                            <a href='https://www.instagram.com/edisonbicycles/' target="_blank"><InstagramIcon style={styling.icons}/></a>
+                            <a href='https://www.facebook.com/edisonbicycles' target="_blank"><FacebookIcon style={styling.icons}/></a>
+                            <a href='https://twitter.com/edisonbicycles' target="_blank"><TwitterIcon style={styling.icons}/></a>
+                        </div>
+                    </div>
+                        <Instagram />
                 </div>
             </div>
             </div>

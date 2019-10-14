@@ -48,18 +48,18 @@ export default class Header extends Component {
                     <div id="navbarBasicExample" class="navbar-menu">
                         <div class="navbar-start" margin="0 auto">
                             <a class="navbar-item" href="https://www.edisonbicycles.com/about-2" target="_blank">About</a>
-                            <a class="navbar-item">Why Edison</a>
-                            <a class="navbar-item">Blog</a>
-                            <a class="navbar-item">Contact</a>
-                            <a class="navbar-item">FAQs</a>
+                            <a class="navbar-item" href="https://www.edisonbicycles.com/why-edison" target="_blank">Why Edison</a>
+                            <a class="navbar-item" href='https://www.edisonbicycles.com/blog-1'target="_blank">Blog</a>
+                            <a class="navbar-item" href='https://www.edisonbicycles.com/contact' target="_blank">Contact</a>
+                            <a class="navbar-item" href='https://www.edisonbicycles.com/faq' target="_blank">FAQs</a>
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a class="navbar-link">Shop</a>
                             <div class="navbar-dropdown">
-                                <a class="navbar-item">The Pair</a>
-                                <a class="navbar-item">The Black</a>
-                                <a class="navbar-item">The White</a>
+                                <a class="navbar-item" >The Pair</a>
+                                <a class="navbar-item" >The Black</a>
+                                <a class="navbar-item" >The White</a>
                             <hr class="navbar-divider" />
-                                <a class="navbar-item">Testimonials</a>
+                                <a class="navbar-item"  name='testimonials'>Testimonials</a>
                             </div>
                         </div>
                         </div>
