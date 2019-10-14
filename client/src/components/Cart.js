@@ -1,5 +1,4 @@
 import React from 'react';
-
 import 'bulma/css/bulma.css'
 import Email from './Email.js'
 
@@ -19,6 +18,8 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import Fab from '@material-ui/core/Fab';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ReceiptIcon from '@material-ui/icons/Receipt';
+
+// Cart functionality design from Material UI
 
 const useStyles = makeStyles({
   body: {
@@ -82,6 +83,7 @@ export default function TemporaryDrawer(props) {
     setState({ ...state, [side]: open });
   };
 
+  // Note: When "Add To Cart button is clicked, the bike information is pushed to the cart array"
   const sideList = side => (
     <div
       className={styling.list}
@@ -102,7 +104,9 @@ export default function TemporaryDrawer(props) {
                 <Grid container spacing={2}>
                     <Grid item>
                         <ButtonBase className={styling.image} padding="10px">
-                            <img className={styling.image} src={cartItem.image} width="100" />
+                            <img className={styling.image} 
+                                  src={cartItem.image} 
+                                  width="100" />
                         </ButtonBase>
                     </Grid>
                     <Grid item xs={12} sm container>

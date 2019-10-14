@@ -14,7 +14,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
-
+//The following array was tester code to ensure that the styling would render in React.
 const featuredPosts = [
     {
       title: 'Testimonial 1',
@@ -70,7 +70,8 @@ const styling = {
         margin: '0 10px'
     }
 }
-  
+
+//AJAX request to back end server for testimonials
 const getTestimonials = () =>
   fetch('/api/testimonial/')
     .then(res => res.json())
@@ -139,6 +140,7 @@ export default class Testimonials extends Component {
                     </Grid>
                 </div>
                 <div class="column ">
+                     {/* Social Media links and photo tile  */}
                     <div style={styling.socials}>
                         <Typography component="h2" variant="h4" style={styling.feed}>Socials</Typography>
                         <Typography variant="h6" color="textSecondary">The Journey Is Just As Important As The Destination. Follow Ours.</Typography>

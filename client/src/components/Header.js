@@ -79,7 +79,7 @@ export default class Header extends Component {
                                     addBikeToOrder={this.props.addBikeToOrder}
                                     updateEmail={this.props.updateEmail}
                                     removeBikeFromCart={this.props.removeBikeFromCart}
-                                    />
+                                />
                             </a>
                             </div>
                         </div>

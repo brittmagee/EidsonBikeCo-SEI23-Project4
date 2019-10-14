@@ -28,7 +28,7 @@ export default class Email extends Component {
         await this.props.updateEmail(this.state.newEmail)
       }
 
-
+        // On Submit of email, the email is saved to the SQL database
     render() {
         return (
             <div>

@@ -116,7 +116,7 @@ export default function AlertDialog(props) {
             </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={()=>{props.addBikeToCart(props.bike)}} color="primary">
             Add to cart
           </Button>
           <Button onClick={handleClose} color="primary" autoFocus>

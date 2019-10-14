@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'bulma/css/bulma.css'
 
+//The following array was tester code to ensure that the styling would render in React.
 const featuredBenefits = [
   {
     icon: "https://image.flaticon.com/icons/svg/59/59252.svg",

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import Modal from './Modal.js'
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-
+//The following array was tester code to ensure that the styling would render in React.
 const featuredBikes = [
   {
     title: 'The Pair',
@@ -111,9 +110,6 @@ export default function ImgMediaCard(props) {
                     size="small"  
                     className={classes.button} 
                     />
-                {/* <Button onClick={bikeName()} bikes={props.bikes} size="small" color="primary" className={classes.button} >
-                    Add to Cart
-                </Button> */}
                 </CardActions>
             </Card>
             </Grid>
