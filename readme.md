@@ -30,8 +30,9 @@
 #### This application has: 
 
 * Three API models – Bikes, Testimonials, and Orders
+* Third Party API: Google Maps
 * CSS styling: A combination of my own CSS, Material UI and Bulma. (Note: Used Semantic to remove the wrapper from the Google map)
-* Wireframes that were designed at teh beginning of the planning process.
+* Wireframes that were designed at the beginning of the planning process.
 * ERD
 * Deployed online and accessible to the public via Heroku
 
