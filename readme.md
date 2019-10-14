@@ -4,7 +4,7 @@
 
 # Edison Electric Bike Co.
 
-#### This React-Django Application is the beginning stages of a fully functional eCommerce website for Edison Bike Shop.  Users will also be able to add, remove, and update items from the shopping cart. 
+#### This React-Django Application is the beginning stages of a fully functional eCommerce website for Edison Bike Shop. Users will also be able to view, add, and remove items from the shopping cart. Users will also be able to view the bike specs, preview Edison's social media, read testimonials, and learn statistics about the benefits of using an electric bicycle.
 
 ##### Important Links:
 [**Deployed Site**](https://fierce-basin-13970.herokuapp.com)
@@ -22,13 +22,16 @@
     <dd>SQLite</dd>
     <dd>HTML5</dd>
     <dd>CSS</dd>
+    <dd>Material UI</dd>
+    <dd>Bulma</dd>
 </dl>
+
 
 #### This application has: 
 
-* Four API models – Bikes, Cart, Orders, Testimonials
-* CSS styling: .......
-* Wireframes that were designed during the planning process.
+* Three API models – Bikes, Testimonials, and Orders
+* CSS styling: A combination of my own CSS, Material UI and Bulma. (Note: Used Semantic to remove the wrapper from the Google map)
+* Wireframes that were designed at teh beginning of the planning process.
 * ERD
 * Deployed online and accessible to the public via Heroku
 
