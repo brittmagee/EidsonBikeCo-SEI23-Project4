@@ -1,6 +1,3 @@
-#### To the Airbnb recruiters: Please see the client>src>App.js file as the code that I am most proud of. It demonstrates that within React I can set the state, write functions, and pass them to child components. Also, please note that while I did use Material UI and Bulma to help style this application, I incorporated my own styling preferences to each component as well. Please let me know if you have any questions. 
-***
-
 ##### Disclaimer: The following code is written as a final project for my General Assembly Software Engineering class. This site is **_not_** the official website for the Edison Electric Bike Co. For access to the official website, please click the following link: [Edison Electic Bike Co.](https://www.edisonbicycles.com/) 
 
 ***
