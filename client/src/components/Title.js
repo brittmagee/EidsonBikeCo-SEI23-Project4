@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css'
 const styling = {
     image: {
         backgroundImage: "url(https://s3.amazonaws.com/cloud.scoutmob.com/hp/products/11110/product/Edison_Shoot_213-0095.jpg?1518453189)",
-        backgroundSize: "100vw",
+        backgroundSize: "cover",
         display: "block",
         maxWidth: "100%",
         height: "auto",

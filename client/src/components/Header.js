@@ -36,7 +36,11 @@ export default class Header extends Component {
                 <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
                         <a class="navbar-item" href="/">
-                            <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp"/>
+                            <picture>
+                                <source srcset="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp" type="image/webp"/>
+                                <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp"/>
+                            </picture>
+                            {/* <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp"/> */}
                         </a>
                         {/* Activates for mobile/small screen viewing */}
                         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
