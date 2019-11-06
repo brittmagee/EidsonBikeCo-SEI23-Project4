@@ -38,7 +38,8 @@ export default class Header extends Component {
                         <a class="navbar-item" href="/">
                             <picture>
                                 <source srcset="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp" type="image/webp"/>
-                                <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp"/>
+                                <source srcset="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_468,h_124,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.jpg" type="image/jpeg"/>
+                                <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_468,h_124,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.jpg"/>
                             </picture>
                             {/* <img src="https://static.wixstatic.com/media/05d438_1307244c3c7544269ba38bc8af757173~mv2.jpg/v1/fill/w_360,h_94,al_c,q_80,usm_0.66_1.00_0.01/Logo_C-Justified.webp"/> */}
                         </a>
