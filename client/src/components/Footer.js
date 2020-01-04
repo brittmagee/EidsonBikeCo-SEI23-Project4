@@ -92,7 +92,7 @@ export default class Footer extends Component {
 
                         </p>
                         <p style={styling.signature} class="has-text-grey-light">
-                            General Assmebly | SEI23 Final Project by: <br></br><a href="https://github.com/brittmagee" target="_blank">Brittani Magee</a>
+                            General Assembly | SEI23 Final Project by: <br></br><a href="https://github.com/brittmagee" target="_blank">Brittani Magee</a>
                         </p>
                     </div>
                 </div>
